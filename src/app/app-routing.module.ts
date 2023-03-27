@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { TodoItemComponent } from './components/todo-item/todo-item.component';
 import { MainPageComponent } from './components/main-page/main-page.component';
+import { TodoListComponent } from './components/todo-list/todo-list.component';
 
 const routes: Routes = [
   { path: '', component: MainPageComponent },
-  { path: 'todoItems', component: TodoItemComponent }
+  { path: 'todoItems', component: TodoListComponent }
 ];
 
 @NgModule({
