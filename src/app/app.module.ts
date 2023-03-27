@@ -8,6 +8,7 @@ import { TodoItemComponent } from './components/todo-item/todo-item.component';
 import { HeaderComponent } from './components/header/header.component';
 import { TodoListComponent } from './components/todo-list/todo-list.component';
 import { AppRoutingModule } from './app-routing.module';
+import { MainPageComponent } from './components/main-page/main-page.component';
 
 
 @NgModule({
@@ -15,7 +16,8 @@ import { AppRoutingModule } from './app-routing.module';
     AppComponent,
     TodoItemComponent,
     HeaderComponent,
-    TodoListComponent
+    TodoListComponent,
+    MainPageComponent
   ],
   imports: [
     BrowserModule,
