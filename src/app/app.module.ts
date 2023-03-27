@@ -7,6 +7,8 @@ import { MaterialModule } from '../modules/material/material.module';
 import { TodoItemComponent } from './components/todo-item/todo-item.component';
 import { HeaderComponent } from './components/header/header.component';
 import { TodoListComponent } from './components/todo-list/todo-list.component';
+import { AppRoutingModule } from './app-routing.module';
+
 
 @NgModule({
   declarations: [
@@ -18,7 +20,8 @@ import { TodoListComponent } from './components/todo-list/todo-list.component';
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    MaterialModule
+    MaterialModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
