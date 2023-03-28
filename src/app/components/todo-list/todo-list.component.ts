@@ -19,4 +19,7 @@ export class TodoListComponent implements OnInit{
   getTodos (){
   this.todosServiceService.getTodos()
 }
+  getDataInParent (item:TodoItem){
+    console.log(item.title)
+  }
 }

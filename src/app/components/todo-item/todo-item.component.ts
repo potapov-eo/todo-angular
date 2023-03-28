@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { TodoItem } from '../../service/todos-service.service';
 
 @Component({
@@ -8,4 +8,9 @@ import { TodoItem } from '../../service/todos-service.service';
 })
 export class TodoItemComponent {
   @Input()  itemData?: TodoItem
+   @Output()  sendDataEmitter = new EventEmitter<TodoItem> ()
+
+  sendDataInParent (){
+    this.sendDataEmitter.emit(this.itemData)
+  }
 }
