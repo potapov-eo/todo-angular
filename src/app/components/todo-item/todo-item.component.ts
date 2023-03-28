@@ -8,7 +8,7 @@ import { TodoItem } from '../../service/todos-service.service';
 })
 export class TodoItemComponent {
   @Input()  itemData?: TodoItem
-   @Output()  sendDataEmitter = new EventEmitter<TodoItem> ()
+  @Output()  sendDataEmitter = new EventEmitter<TodoItem> ()
 
   sendDataInParent (){
     this.sendDataEmitter.emit(this.itemData)

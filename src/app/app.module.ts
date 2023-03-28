@@ -8,7 +8,9 @@ import { HeaderComponent } from './components/header/header.component';
 import { TodoListComponent } from './components/todo-list/todo-list.component';
 import { AppRoutingModule } from './app-routing.module';
 import { MainPageComponent } from './components/main-page/main-page.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
+import { PreloaderInterceptor } from './interceptors/preloader.interceptor';
+import { SpinerComponent } from './components/spiner/spiner.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +18,8 @@ import { HttpClientModule } from '@angular/common/http';
     TodoItemComponent,
     HeaderComponent,
     TodoListComponent,
-    MainPageComponent
+    MainPageComponent,
+    SpinerComponent
   ],
   imports: [
     BrowserModule,
@@ -25,7 +28,13 @@ import { HttpClientModule } from '@angular/common/http';
     AppRoutingModule,
     HttpClientModule,
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: PreloaderInterceptor,
+      multi: true
+    }
+    ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
